@@ -1,30 +1,44 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import Alert from "./components/Alert.vue";
+import { ref } from "vue";
+
+const showAlert = ref(true);
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="space-y-5">
+    <Alert
+      :show="showAlert"
+      :on-dismiss="() => (showAlert = false)"
+      title="Awesome Alert"
+    >
+      <p>Some important message</p>
+    </Alert>
+    <Alert
+      :show="showAlert"
+      intent="success"
+      :on-dismiss="() => (showAlert = false)"
+      title="Awesome Alert"
+    >
+      <p>Some important message</p>
+    </Alert>
+    <Alert
+      :show="showAlert"
+      intent="warning"
+      :on-dismiss="() => (showAlert = false)"
+      title="Awesome Alert"
+    >
+      <p>Some important message</p>
+    </Alert>
+    <Alert
+      :show="showAlert"
+      intent="danger"
+      :on-dismiss="() => (showAlert = false)"
+      title="Awesome Alert"
+    >
+      <p>Some important message</p>
+    </Alert>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>
